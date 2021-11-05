@@ -2,7 +2,9 @@
 title: "Welcome!"
 ---
 
-My name is Ragyie, welcome to my personal website. 
+<br>
+
+**My name is Ragyie, welcome to my personal website** 
 
 If you want to learn more about me, visit my [introduction](introduction.html) page. 
 
