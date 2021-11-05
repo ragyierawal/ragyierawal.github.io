@@ -5,10 +5,16 @@ navbar:
   right:
     - text: "About"
       href: about.html
+    - text: "Introduction"
+      href: introduction.html
+    - text: "Resume"
+      href: resume.html
     - icon: fa-envelope fa-lg
       href: mailto:<rr3423@cumc.columbia.edu>
     - icon: fa-github fa-lg
       href: http://github.com/ragyierawal/
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/ragyie-rawal-a75b52139/
 output:
   html_document:
     theme: cerulean
