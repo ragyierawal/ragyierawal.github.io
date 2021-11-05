@@ -7,7 +7,6 @@ output:
     theme: cerulean
 ---
 
-```{r introductory_landing_page}
+Hi, my name is Ragyie and welcome to my personal website!
 
-```
-
+If you want to learn more about me, here's my [introduction](landing.html) page. 
