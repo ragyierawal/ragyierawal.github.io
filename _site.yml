@@ -1,7 +1,7 @@
 name: "Ragyie Rawal"
 output_dir: "."
 navbar:
-  title: "Home"
+  title: "Ragyie Rawal"
   right:
     - text: "About"
       href: about.html
@@ -17,4 +17,4 @@ navbar:
       href: https://www.linkedin.com/in/ragyie-rawal-a75b52139/
 output:
   html_document:
-    theme: cerulean
+    theme: journal
