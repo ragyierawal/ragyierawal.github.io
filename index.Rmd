@@ -10,3 +10,5 @@ output:
 Hi, my name is Ragyie and welcome to my personal website!
 
 If you want to learn more about me, here's my [introduction](landing.html) page. 
+
+Here is my [resume](resume.html) page. 
