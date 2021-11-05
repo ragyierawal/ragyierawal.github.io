@@ -4,5 +4,8 @@ title: "Introduction"
 
 About me! 
 
+I am a graduate student pursuing a M.S. in Biostatistics at Columbia University Mailman School of Public Health.
+My interest is in Statistical Genetics. 
+
 Click here to go back to the [main](index.html) page. 
 
