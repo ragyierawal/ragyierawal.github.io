@@ -4,8 +4,8 @@ title: "About this site"
 
 This site was made using R Studio, and is hosted on my github page (linked in the navigation bar). 
 
-R: Version 4.1.1 (2021-08-10) -- "Kick Things"
+* R: Version 4.1.1 (2021-08-10) -- "Kick Things"
 
-R Studio: Version 1.4.1717
+* R Studio: Version 1.4.1717
 
-Click here to go back to the [main](index.html) page.
+Click here to return to the [main](index.html) page.
