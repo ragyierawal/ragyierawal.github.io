@@ -1,7 +1,7 @@
 ---
-title: "Academic and Professional Experience"
+title: "Resume"
 ---
 
-Here is my academic and professional experience: 
+Academic and Professional Experience: 
 
 Click here to go back to the [main](index.html) page. 
