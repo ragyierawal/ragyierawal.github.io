@@ -8,6 +8,5 @@ output:
 
 About me! 
 
-
 Click here to go back to the [main](index.html) page. 
 
