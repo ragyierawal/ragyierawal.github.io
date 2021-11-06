@@ -28,7 +28,7 @@ instacart_df =
   )
 ```
 
-Column {data-width=650}
+Column {data-width=400}
 -----------------------------------------------------------------------
 
 ### Chart A
@@ -43,7 +43,7 @@ instacart_df %>%
          yaxis = list(title = "Number of items ordered"))
 ```
 
-Column {data-width=350}
+Column {data-width=400}
 -----------------------------------------------------------------------
 
 ### Chart B
@@ -66,4 +66,3 @@ instacart_df %>%
          x = "Days since prior order",
          y = "Count")
 ```
-
