@@ -290,7 +290,15 @@ $(document).ready(function () {
 <div id="loading-and-tidying-the-instacart-dataset" class="section level3">
 <h3>loading and tidying the instacart dataset</h3>
 <pre class="r"><code># loading dataset
-data(&quot;instacart&quot;)</code></pre>
+data(&quot;instacart&quot;)
+
+# tidying dataset 
+instacart_df =
+  instacart %&gt;% 
+  filter(
+    department %in% c(&quot;frozen&quot;), 
+    order_dow == 6
+  )</code></pre>
 </div>
 <div id="column" class="section level2" data-width="650">
 <h2 data-width="650">Column</h2>
