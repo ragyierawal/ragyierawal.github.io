@@ -7,6 +7,8 @@ navbar:
       href: introduction.html
     - text: "Resume"
       href: resume.html
+    - text: "Plotly"
+      href: instacart_plotly.html
     - text: "About"
       href: about.html
     - icon: fa-envelope fa-lg
