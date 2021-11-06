@@ -39,9 +39,9 @@ data("instacart")
 # filtering dataset 
 instacart_df = 
   instacart %>% 
+  janitor::clean_names() %>% 
   filter(
-    department %in% c("frozen", "produce"),
-    reordered == 1,
+    department %in% c("frozen"),
     order_dow == 6
   )
 ```
@@ -51,7 +51,15 @@ Column {data-width=650}
 
 ### Chart A
 
-```{r}
+```{r bar_plot}
+instacart_df %>%
+  count(aisle) %>% 
+  mutate(aisle = fct_reorder(aisle, n)) %>% 
+  plot_ly(x = ~aisle, y = ~n, color = ~aisle, type = "bar", colors = "viridis") %>% 
+  layout(title = "Number of items ordered in each frozen food aisle on day 6",
+         xaxis = list(title = "Aisle"),
+         yaxis = list(title = "Items ordered"),
+         showlegend = FALSE)
 ```
 
 Column {data-width=350}
