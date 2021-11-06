@@ -1,5 +1,5 @@
 ---
-title: "NOAA Dashboard"
+title: "Instacart Dashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -30,11 +30,11 @@ scale_colour_discrete = scale_colour_viridis_d
 scale_fill_discrete = scale_fill_viridis_d
 ```
 
-# loading and tidying the NY NOAA dataset
+### loading and tidying the instacart dataset
 
 ```{r}
 # loading dataset
-data("ny_noaa")
+data("instacart")
 ```
 
 Column {data-width=650}
