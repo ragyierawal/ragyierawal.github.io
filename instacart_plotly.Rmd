@@ -73,7 +73,7 @@ instacart_df %>%
 ```{r histogram}
 instacart_df %>% 
   plot_ly(x = ~days_since_prior_order, color = ~aisle, type = "histogram", colors = "viridis") %>% 
-  layout(title = "Count of days since prior order for each aisle",
+  layout(title = "Count of days since prior order for each frozen food aisle",
          x = "Days since prior order",
          y = "Count")
 ```
