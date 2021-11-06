@@ -9,6 +9,8 @@ navbar:
       href: resume.html
     - text: "Plotly"
       href: instacart_plotly.html
+    - text: "Dashboard"
+      href: instacart_dashboard.html
     - text: "About"
       href: about.html
     - icon: fa-envelope fa-lg
