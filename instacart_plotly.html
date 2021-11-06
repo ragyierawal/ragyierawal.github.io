@@ -35,6 +35,13 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -366,7 +373,32 @@ div.tocify {
 </div>
 
 
+<div id="loading-and-tidying-the-instacart-dataset" class="section level3">
+<h3>loading and tidying the instacart dataset</h3>
+<pre class="r"><code># loading dataset
+data(&quot;instacart&quot;)
 
+# tidying dataset 
+instacart_df =
+  instacart %&gt;% 
+  janitor::clean_names() %&gt;% 
+  filter(
+    department %in% c(&quot;frozen&quot;), 
+    order_dow == 6
+  )</code></pre>
+</div>
+<div id="making-a-barplot" class="section level3">
+<h3>making a barplot</h3>
+<pre class="r"><code>instacart_df %&gt;% 
+  count(aisle) %&gt;% 
+  mutate(aisle = fct_reorder(aisle, n)) %&gt;% 
+  plot_ly(x = ~aisle, y = ~n, color = ~aisle, type = &quot;bar&quot;, colors = &quot;viridis&quot;) %&gt;% 
+  layout(title = &quot;Items ordered in each aisle on day 6&quot;, 
+         xaxis = list(title = &quot;Frozen food aisle&quot;),
+         yaxis = list(title = &quot;Number of items ordered&quot;))</code></pre>
+<div id="htmlwidget-73f35f7d6e13a36e4120" style="width:90%;height:345.6px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-73f35f7d6e13a36e4120">{"x":{"visdat":{"1566692b6cb2":["function () ","plotlyVisDat"]},"cur_data":"1566692b6cb2","attrs":{"1566692b6cb2":{"x":{},"y":{},"color":{},"colors":"viridis","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Items ordered in each aisle on day 6","xaxis":{"domain":[0,1],"automargin":true,"title":"Frozen food aisle","type":"category","categoryorder":"array","categoryarray":["frozen juice","frozen dessert","frozen breads doughs","frozen meat seafood","frozen vegan vegetarian","frozen pizza","frozen appetizers sides","frozen breakfast","frozen meals","frozen produce","ice cream ice"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Number of items ordered"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["frozen juice"],"y":[52],"type":"bar","name":"frozen juice","marker":{"color":"rgba(68,1,84,1)","line":{"color":"rgba(68,1,84,1)"}},"textfont":{"color":"rgba(68,1,84,1)"},"error_y":{"color":"rgba(68,1,84,1)"},"error_x":{"color":"rgba(68,1,84,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["frozen dessert"],"y":[169],"type":"bar","name":"frozen dessert","marker":{"color":"rgba(72,37,117,1)","line":{"color":"rgba(72,37,117,1)"}},"textfont":{"color":"rgba(72,37,117,1)"},"error_y":{"color":"rgba(72,37,117,1)"},"error_x":{"color":"rgba(72,37,117,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["frozen breads doughs"],"y":[222],"type":"bar","name":"frozen breads doughs","marker":{"color":"rgba(65,68,135,1)","line":{"color":"rgba(65,68,135,1)"}},"textfont":{"color":"rgba(65,68,135,1)"},"error_y":{"color":"rgba(65,68,135,1)"},"error_x":{"color":"rgba(65,68,135,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["frozen meat seafood"],"y":[490],"type":"bar","name":"frozen meat seafood","marker":{"color":"rgba(53,96,141,1)","line":{"color":"rgba(53,96,141,1)"}},"textfont":{"color":"rgba(53,96,141,1)"},"error_y":{"color":"rgba(53,96,141,1)"},"error_x":{"color":"rgba(53,96,141,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["frozen vegan vegetarian"],"y":[706],"type":"bar","name":"frozen vegan vegetarian","marker":{"color":"rgba(42,120,142,1)","line":{"color":"rgba(42,120,142,1)"}},"textfont":{"color":"rgba(42,120,142,1)"},"error_y":{"color":"rgba(42,120,142,1)"},"error_x":{"color":"rgba(42,120,142,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["frozen pizza"],"y":[1210],"type":"bar","name":"frozen pizza","marker":{"color":"rgba(33,144,141,1)","line":{"color":"rgba(33,144,141,1)"}},"textfont":{"color":"rgba(33,144,141,1)"},"error_y":{"color":"rgba(33,144,141,1)"},"error_x":{"color":"rgba(33,144,141,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["frozen appetizers sides"],"y":[1388],"type":"bar","name":"frozen appetizers sides","marker":{"color":"rgba(34,168,132,1)","line":{"color":"rgba(34,168,132,1)"}},"textfont":{"color":"rgba(34,168,132,1)"},"error_y":{"color":"rgba(34,168,132,1)"},"error_x":{"color":"rgba(34,168,132,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["frozen breakfast"],"y":[1472],"type":"bar","name":"frozen breakfast","marker":{"color":"rgba(67,190,113,1)","line":{"color":"rgba(67,190,113,1)"}},"textfont":{"color":"rgba(67,190,113,1)"},"error_y":{"color":"rgba(67,190,113,1)"},"error_x":{"color":"rgba(67,190,113,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["frozen meals"],"y":[2922],"type":"bar","name":"frozen meals","marker":{"color":"rgba(122,209,81,1)","line":{"color":"rgba(122,209,81,1)"}},"textfont":{"color":"rgba(122,209,81,1)"},"error_y":{"color":"rgba(122,209,81,1)"},"error_x":{"color":"rgba(122,209,81,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["frozen produce"],"y":[3607],"type":"bar","name":"frozen produce","marker":{"color":"rgba(188,223,39,1)","line":{"color":"rgba(188,223,39,1)"}},"textfont":{"color":"rgba(188,223,39,1)"},"error_y":{"color":"rgba(188,223,39,1)"},"error_x":{"color":"rgba(188,223,39,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["ice cream ice"],"y":[3997],"type":"bar","name":"ice cream ice","marker":{"color":"rgba(253,231,37,1)","line":{"color":"rgba(253,231,37,1)"}},"textfont":{"color":"rgba(253,231,37,1)"},"error_y":{"color":"rgba(253,231,37,1)"},"error_x":{"color":"rgba(253,231,37,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
 
 
 

@@ -29,3 +29,31 @@ scale_colour_discrete = scale_colour_viridis_d
 scale_fill_discrete = scale_fill_viridis_d
 ```
 
+### loading and tidying the instacart dataset
+
+```{r instacart_data}
+# loading dataset
+data("instacart")
+
+# tidying dataset 
+instacart_df =
+  instacart %>% 
+  janitor::clean_names() %>% 
+  filter(
+    department %in% c("frozen"), 
+    order_dow == 6
+  )
+```
+
+### making a barplot 
+
+```{r bar_plot}
+instacart_df %>% 
+  count(aisle) %>% 
+  mutate(aisle = fct_reorder(aisle, n)) %>% 
+  plot_ly(x = ~aisle, y = ~n, color = ~aisle, type = "bar", colors = "viridis") %>% 
+  layout(title = "Items ordered in each aisle on day 6", 
+         xaxis = list(title = "Frozen food aisle"),
+         yaxis = list(title = "Number of items ordered"))
+```
+
