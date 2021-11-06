@@ -57,3 +57,14 @@ instacart_df %>%
          yaxis = list(title = "Number of items ordered"))
 ```
 
+### making a boxplot 
+
+```{r box_plot}
+instacart_df %>% 
+  mutate(aisle = fct_reorder(aisle, order_hour_of_day)) %>% 
+  plot_ly(y = ~order_hour_of_day, color = ~aisle, type = "box", colors = "viridis") %>% 
+  layout(title = "Order hour of the day per aisle on day 6", 
+         xaxis = list(title = "Frozen food aisle"),
+         yaxis = list(title = "Order hour of the day"))
+```
+
