@@ -28,7 +28,7 @@ instacart_df =
   )
 ```
 
-Column {data-width=400}
+Column {data-width=500}
 -----------------------------------------------------------------------
 
 ### Chart A
@@ -43,7 +43,7 @@ instacart_df %>%
          yaxis = list(title = "Number of items ordered"))
 ```
 
-Column {data-width=400}
+Column {data-width=500}
 -----------------------------------------------------------------------
 
 ### Chart B

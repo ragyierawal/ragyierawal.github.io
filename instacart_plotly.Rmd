@@ -78,3 +78,6 @@ instacart_df %>%
          y = "Count")
 ```
 
+<br>
+
+Click here to return to the [main](index.html) page. 
