@@ -31,38 +31,35 @@ instacart_df =
 Column {data-width=500}
 -----------------------------------------------------------------------
 
-### Chart A
+### Number of items ordered in each frozen food aisle on day 6
 
 ```{r bar_plot}
 instacart_df %>% 
   count(aisle) %>% 
   mutate(aisle = fct_reorder(aisle, n)) %>% 
   plot_ly(x = ~aisle, y = ~n, color = ~aisle, type = "bar", colors = "viridis") %>% 
-  layout(title = "Items ordered in each aisle on day 6", 
-         xaxis = list(title = "Frozen food aisle"),
-         yaxis = list(title = "Number of items ordered"))
+  layout(xaxis = list(title = "Aisle"),
+         yaxis = list(title = "Items ordered"))
 ```
 
 Column {data-width=500}
 -----------------------------------------------------------------------
 
-### Chart B
+### Order hour of the day for each frozen food aisle on day 6
 
 ```{r box_plot}
 instacart_df %>% 
   mutate(aisle = fct_reorder(aisle, order_hour_of_day)) %>% 
   plot_ly(y = ~order_hour_of_day, color = ~aisle, type = "box", colors = "viridis") %>% 
-  layout(title = "Order hour of the day per aisle on day 6", 
-         xaxis = list(title = "Frozen food aisle"),
+  layout(xaxis = list(title = "Aisle"),
          yaxis = list(title = "Order hour of the day"))
 ```
 
-### Chart C
+### Count of days since prior order for each frozen food aisle on day 6
 
 ```{r histogram}
 instacart_df %>% 
   plot_ly(x = ~days_since_prior_order, color = ~aisle, type = "histogram", colors = "viridis") %>% 
-  layout(title = "Count of days since prior order for each frozen food aisle on day 6",
-         x = "Days since prior order",
-         y = "Count")
+  layout(xaxis = list(title = "Days since prior order"),
+         yaxis = list(title = "Count"))
 ```

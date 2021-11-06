@@ -52,8 +52,7 @@ instacart_df %>%
   count(aisle) %>% 
   mutate(aisle = fct_reorder(aisle, n)) %>% 
   plot_ly(x = ~aisle, y = ~n, color = ~aisle, type = "bar", colors = "viridis") %>% 
-  layout(title = "Items ordered in each aisle on day 6", 
-         xaxis = list(title = "Frozen food aisle"),
+  layout(xaxis = list(title = "Frozen food aisle"),
          yaxis = list(title = "Number of items ordered"))
 ```
 
@@ -63,8 +62,7 @@ instacart_df %>%
 instacart_df %>% 
   mutate(aisle = fct_reorder(aisle, order_hour_of_day)) %>% 
   plot_ly(y = ~order_hour_of_day, color = ~aisle, type = "box", colors = "viridis") %>% 
-  layout(title = "Order hour of the day per aisle on day 6", 
-         xaxis = list(title = "Frozen food aisle"),
+  layout(xaxis = list(title = "Frozen food aisle"),
          yaxis = list(title = "Order hour of the day"))
 ```
 
@@ -73,8 +71,7 @@ instacart_df %>%
 ```{r histogram, message = FALSE, warning = FALSE}
 instacart_df %>% 
   plot_ly(x = ~days_since_prior_order, color = ~aisle, type = "histogram", colors = "viridis") %>% 
-  layout(title = "Count of days since prior order for each frozen food aisle on day 6",
-         x = "Days since prior order",
+  layout(x = "Days since prior order",
          y = "Count")
 ```
 
