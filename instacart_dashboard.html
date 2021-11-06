@@ -295,6 +295,7 @@ data(&quot;instacart&quot;)
 # tidying dataset 
 instacart_df =
   instacart %&gt;% 
+  janitor::clean_names() %&gt;% 
   filter(
     department %in% c(&quot;frozen&quot;), 
     order_dow == 6

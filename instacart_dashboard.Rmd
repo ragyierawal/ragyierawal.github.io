@@ -39,6 +39,7 @@ data("instacart")
 # tidying dataset 
 instacart_df =
   instacart %>% 
+  janitor::clean_names() %>% 
   filter(
     department %in% c("frozen"), 
     order_dow == 6
