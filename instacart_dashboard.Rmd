@@ -51,7 +51,14 @@ Column {data-width=650}
 
 ### Chart A
 
-```{r}
+```{r bar_plot}
+instacart_df %>% 
+  count(aisle) %>% 
+  mutate(aisle = fct_reorder(aisle, n)) %>% 
+  plot_ly(x = ~aisle, y = ~n, color = ~aisle, type = "bar", colors = "viridis") %>% 
+  layout(title = "Items ordered in each aisle on day 6", 
+         xaxis = list(title = "Frozen aisle"),
+         yaxis = list(title = "Number of items ordered"))
 ```
 
 Column {data-width=350}
