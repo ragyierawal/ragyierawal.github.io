@@ -1,5 +1,5 @@
 ---
-title: "Instacart Dashboard"
+title: "NOAA Dashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -30,20 +30,11 @@ scale_colour_discrete = scale_colour_viridis_d
 scale_fill_discrete = scale_fill_viridis_d
 ```
 
-# loading and tidying the instacart dataset
+# loading and tidying the NY NOAA dataset
 
 ```{r}
 # loading dataset
-data("instacart")
-
-# filtering dataset 
-instacart_df = 
-  instacart %>% 
-  janitor::clean_names() %>% 
-  filter(
-    department %in% c("frozen"),
-    order_dow == 6
-  )
+data("ny_noaa")
 ```
 
 Column {data-width=650}
@@ -51,15 +42,7 @@ Column {data-width=650}
 
 ### Chart A
 
-```{r bar_plot}
-instacart_df %>%
-  count(aisle) %>% 
-  mutate(aisle = fct_reorder(aisle, n)) %>% 
-  plot_ly(x = ~aisle, y = ~n, color = ~aisle, type = "bar", colors = "viridis") %>% 
-  layout(title = "Number of items ordered in each frozen food aisle on day 6",
-         xaxis = list(title = "Aisle"),
-         yaxis = list(title = "Items ordered"),
-         showlegend = FALSE)
+```{r}
 ```
 
 Column {data-width=350}
